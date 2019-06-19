@@ -17,11 +17,16 @@ class Users : Display
         self.id = String()
     }
     
-    var passwprd: String?
+    var password: String?
     {
         get{
             return self._password
         }
+    }
+    
+    func setPassword(password: String)
+    {
+        self._password = password
     }
     
     init(id: String, password: String)
