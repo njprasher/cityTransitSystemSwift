@@ -35,8 +35,9 @@ class Users : Display
         self._password = password
     }
     
-    func Display() {
-        print("User Id : " , self.id ?? "No Id Given")
+    func Display()
+    {
+        print("\nUser Id : " , self.id ?? "No Id Given")
     }
     
 }
