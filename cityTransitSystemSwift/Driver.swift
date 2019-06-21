@@ -10,22 +10,33 @@ import Foundation
 
 class Driver:Display{
     
+    
+    
     // declaring variables
     var driverName : String?
-    var driverEnail: String?
+    var driverEmail: String?
     var driverPhone: Int?
     var driverSalary: Double?
     var driverBirth: String?
     var driverAddress: String?
     
     // INITIALSE THE VARIABLES
-    init(driverName: String,driverEnail: String,driverPhone: Int,driverSalary: Double,driverBirth: String,driverAddress: String ) {
+    init(driverName: String,driverEmail: String,driverPhone: Int,driverSalary: Double,driverBirth: String,driverAddress: String ) {
         self.driverName = driverName
-        self.driverEnail = driverEnail
+        self.driverEmail = driverEmail
         self.driverPhone = driverPhone
         self.driverSalary = driverSalary
         self.driverBirth = driverBirth
         self.driverAddress = driverAddress
+    }
+    
+    func Display() {
+        print("Driver name : \(String(describing: self.driverName!))")
+        print("Driver Email : \(String(describing: self.driverEmail!))")
+        print("Driver Phone Number : \(String(self.driverPhone!))")
+        print("Driver Salary is : \(String(self.driverSalary!))")
+
+        
     }
     
 }
