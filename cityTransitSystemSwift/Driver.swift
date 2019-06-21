@@ -18,6 +18,14 @@ class Driver:Display{
     var driverBirth: String?
     var driverAddress: String?
     
-
+    // INITIALSE THE VARIABLES
+    init(driverName: String,driverEnail: String,driverPhone: Int,driverSalary: Double,driverBirth: String,driverAddress: String ) {
+        self.driverName = driverName
+        self.driverEnail = driverEnail
+        self.driverPhone = driverPhone
+        self.driverSalary = driverSalary
+        self.driverBirth = driverBirth
+        self.driverAddress = driverAddress
+    }
     
 }
