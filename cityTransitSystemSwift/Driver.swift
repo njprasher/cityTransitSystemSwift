@@ -30,11 +30,15 @@ class Driver:Display{
         self.driverAddress = driverAddress
     }
     
+    //protocol display function overrided
     func Display() {
+        
         print("Driver name : \(String(describing: self.driverName!))")
         print("Driver Email : \(String(describing: self.driverEmail!))")
         print("Driver Phone Number : \(String(self.driverPhone!))")
         print("Driver Salary is : \(String(self.driverSalary!))")
+        print("Date of Birth: \(String(describing: self.driverBirth!))")
+        print("Driver Address : \(String(describing: self.driverAddress!))")
 
         
     }
