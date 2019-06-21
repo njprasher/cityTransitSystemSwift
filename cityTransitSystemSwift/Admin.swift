@@ -13,7 +13,7 @@ class Admin
     var adminEmail : String?
     
     // Array of driver class
-    lazy var arrayDriver: [Driver] = [Driver]()
+    //lazy var arrayDriver: [Driver] = [Driver]()
 
 init()
    {
