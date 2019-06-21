@@ -10,37 +10,7 @@ import Foundation
 
 class Driver:Display{
     
-    
-    
-    // declaring variables
-    var driverName : String?
-    var driverEmail: String?
-    var driverPhone: Int?
-    var driverSalary: Double?
-    var driverBirth = Date()
-    var driverAddress: String?
-    
-    // INITIALSE THE VARIABLES
-    init(driverName: String,driverEmail: String,driverPhone: Int,driverSalary: Double,driverBirth: Date,driverAddress: String ) {
-        self.driverName = driverName
-        self.driverEmail = driverEmail
-        self.driverPhone = driverPhone
-        self.driverSalary = driverSalary
-        self.driverBirth = driverBirth
-        self.driverAddress = driverAddress
-    }
-    
-    //protocol display function overrided
-   
-    func Display() {
-        
-        print("Driver name : \(String(describing: self.driverName!))")
-        print("Driver Email : \(String(describing: self.driverEmail!))")
-        print("Driver Phone Number : \(String(self.driverPhone!))")
-        print("Driver Salary is : \(String(self.driverSalary!))")
-        print("Date of Birth: \(String(describing: self.driverBirth.getForamttedDate()))")
-        print("Driver Address : \(String(describing: self.driverAddress!))")
 
-        }
+    
     
 }
