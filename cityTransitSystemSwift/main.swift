@@ -7,5 +7,8 @@
 //
 
 import Foundation
+var a = Admin()
+a.adminName = "Hargun"
+a.adminEmail = "hargun27@gmail.com"
 
 
