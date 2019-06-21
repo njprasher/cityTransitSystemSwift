@@ -10,4 +10,12 @@ import Foundation
 
 class Driver{
     
+    // declaring variables
+    var driverName : String?
+    var driverEnail: String?
+    var driverPhone: Int?
+    var driverSalary: Double?
+    var driverBirth: String?
+    var driverAddress: String?
+    
 }
