@@ -8,7 +8,9 @@
 
 import Foundation
 
-class Driver{
+class Driver: Display{
+    
+    
     
     // declaring variables
     var driverName : String?
@@ -28,4 +30,8 @@ class Driver{
         self.driverAddress = driverAddress
     }
 
+    
+    func Display() {
+        <#code#>
+    }
 }
