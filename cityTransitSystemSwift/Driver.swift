@@ -8,9 +8,7 @@
 
 import Foundation
 
-class Driver:Display{
+class Driver{
     
 
-    
-    
 }
