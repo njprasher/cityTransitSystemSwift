@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Driver{
+class Driver:Display{
     
     // declaring variables
     var driverName : String?
@@ -17,5 +17,7 @@ class Driver{
     var driverSalary: Double?
     var driverBirth: String?
     var driverAddress: String?
+    
+
     
 }
