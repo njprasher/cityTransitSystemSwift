@@ -31,6 +31,7 @@ class Driver:Display{
     }
     
     //protocol display function overrided
+   
     func Display() {
         
         print("Driver name : \(String(describing: self.driverName!))")
@@ -40,7 +41,6 @@ class Driver:Display{
         print("Date of Birth: \(String(describing: self.driverBirth.getForamttedDate()))")
         print("Driver Address : \(String(describing: self.driverAddress!))")
 
-        
-    }
+        }
     
 }
