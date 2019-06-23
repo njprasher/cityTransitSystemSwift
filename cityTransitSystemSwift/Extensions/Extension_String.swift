@@ -25,7 +25,7 @@ extension String
     
     func isValidName() -> Bool
     {
-        let nameTest = NSPredicate(format: "SELF MATCHES %@", "[^a-zA-Z]")
+        let nameTest = NSPredicate(format: "SELF MATCHES %@", "[^a-zA-Z].{,24}")
         return nameTest.evaluate(with: self)
     }
     
