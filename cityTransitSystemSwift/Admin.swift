@@ -7,27 +7,18 @@
 //
 
 import Foundation
-class Admin
+class Admin : Users
     {
     var adminName : String?
     var adminEmail : String?
-    
-    // Array of driver class
-    //lazy var arrayDriver: [Driver] = [Driver]()
-
-init()
+    var contact: String?
+   lazy var arrayDrivers:[Driver] = [Driver]()
+    override init()
    {
     self.adminName = String()
     self.adminEmail = String()
+    self.contact = String()
+    super.init()
     }
-    
-    
-    func display()
-    {
-        print(self.adminName ?? "No Name"  , self.adminEmail ?? "No Email" )
-    }
-    func displayRiders()
-    {
-        
-    }
+   
 }
