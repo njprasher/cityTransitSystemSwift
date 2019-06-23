@@ -16,6 +16,8 @@ class Rider: Users
     var contact: String?
     var card: Dictionary<String, Double>?
     
+    private static var riderDict=[String:Rider]()
+    
     override init() {
         self.name = String()
         self.birth = Date()
