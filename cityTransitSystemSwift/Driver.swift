@@ -14,6 +14,7 @@ class Driver{
         // declaring variables
     
     var driverId: String?
+    
         private var driverName : String?
         var getDriverName: String{
             return self.driverName!
@@ -76,6 +77,7 @@ class Driver{
         }
         
         func setDriverPhone(dPhone: Int){
+            
             self.driverPhone = dPhone
         }
         
@@ -98,6 +100,37 @@ class Driver{
 
         
         // Salary error handling
+    func NewValidateSalary(salary: Double) throws
+    {
+        guard salary >= 0
+            else { throw SalaryError.NonNegative(s: salary) }
+        guard salary != 0
+            else { throw SalaryError.NonZero }
+        guard salary > 2000
+            else { throw SalaryError.LessThanTwoThousand(s: salary) }
+        
+        do
+        {
+            try NewValidateSalary(salary: 3000)
+            print("Right salary")
+        }
+        catch SalaryError.NonZero
+        {
+            print("Salary equals 0")
+        }
+        catch SalaryError.NonNegative(let s)
+        {
+            print("Salary Negative \(s)")
+        }
+        catch SalaryError.LessThanTwoThousand(let s)
+        {
+            print("Salary less than 2000 => \(s)")
+        }
+        catch
+        {
+            print(error)
+        }
+    }
 
     
         
@@ -106,13 +139,38 @@ class Driver{
            // super.Display()
             print("Driver Id : \(String(describing: self.driverId!))")
             print("Driver name : \(String(describing: self.driverName!))")
-            print("Driver Email : \(String(describing: self.driverEmail!))")
+            let isValidEmail = driverEmail!.isValidEmail()
+            if isValidEmail == true
+            {
+                print("Driver Email : \(String(describing: self.driverEmail!))")
+            }
+            else
+            {
+                print("Email ID : Invalid Email ! Try Again")
+            }
+
             print("Driver Phone Number : \(String(self.driverPhone!))")
             print("Driver Salary is : \(String(describing: self.driverSalary!))")
             print("Date of Birth: \(String(describing: self.driverBirth))")
             print("Driver Address : \(String(describing: self.driverAddress!))")
         }
     
+    //https://stackoverflow.com/questions/27998409/email-phone-validation-in-swift
+    
+   /* func isValidEmail(testStr:String) -> Bool {
+        print("validate emilId: \(testStr)")
+        let emailRegEx = "^(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?(?:(?:(?:[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+(?:\\.[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+)*)|(?:\"(?:(?:(?:(?: )*(?:(?:[!#-Z^-~]|\\[|\\])|(?:\\\\(?:\\t|[ -~]))))+(?: )*)|(?: )+)\"))(?:@)(?:(?:(?:[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)(?:\\.[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)*)|(?:\\[(?:(?:(?:(?:(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))\\.){3}(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))))|(?:(?:(?: )*[!-Z^-~])*(?: )*)|(?:[Vv][0-9A-Fa-f]+\\.[-A-Za-z0-9._~!$&'()*+,;=:]+))\\])))(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?$"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let result = emailTest.evaluate(with: testStr)
+        return result
+    } */
+    
+    func validate(value: String) -> Bool {
+        let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+        let result =  phoneTest.evaluate(with: value)
+        return result
+    }
     
     
     

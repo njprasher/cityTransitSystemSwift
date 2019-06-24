@@ -24,11 +24,6 @@ var d1:Driver = Driver.init(driverId:"2", driverName: "Guri", driverEmail: "guri
 var d2:Driver = Driver.init(driverId:"3", driverName: "Hargun", driverEmail: "hargun23@gmail.com1", driverPhone: 6781112226, driverSalary: 5677.00, driverBirth:Date(), driverAddress: "12 elgin dr")
 
 
-adminData.addDriver(driver: d1)
-adminData.addDriver(driver: d2)
-adminData.Display()
-adminData.totalNumbersOfDrivers()
-
 
 
 

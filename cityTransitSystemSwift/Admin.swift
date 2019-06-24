@@ -9,19 +9,19 @@
 import Foundation
 class Admin : Users
     {
-    
-    var drivercnt = 0
     var adminName : String
-   var adminEmail : String?
-  var contact: String?
+    var adminEmail : String?
+    var contact: String?
     
     override init()
-   {
+    {
     self.adminName = String()
     self.adminEmail = String()
     self.contact = String()
     super.init()
     }
+    
+    // Dictionary created
     var dictDrivers=[String:Driver]()
     
     //lazy var arrayDriver:[Driver] = [Driver]()
@@ -60,7 +60,8 @@ class Admin : Users
             , "\nAdmin Email :" , self.adminEmail ?? "No email given"
             , "\nAdmin Contact Number :" , self.contact ?? "No contact number given")
                
-        for i in dictDrivers {
+        for i in dictDrivers
+        {
             print(i.value.Display())
         }
         
@@ -68,49 +69,24 @@ class Admin : Users
     }
     
     func totalNumbersOfDrivers(){
+        
         print("Total Number of Drivers are : \(dictDrivers.count)")
     }
     
     
-    func NewValidateSalary(salary: Double) throws
-    {
-        guard salary >= 0
-            else { throw SalaryError.NonNegative(s: salary) }
-        guard salary != 0
-            else { throw SalaryError.NonZero }
-        guard salary > 2000
-            else { throw SalaryError.LessThanTwoThousand(s: salary) }
-        
-        do
-        {
-           try NewValidateSalary(salary: 3000)
-            print("Right salary")
-        }
-        catch SalaryError.NonZero
-        {
-            print("Salary equals 0")
-        }
-        catch SalaryError.NonNegative(let s)
-        {
-            print("Salary Negative \(s)")
-        }
-        catch SalaryError.LessThanTwoThousand(let s)
-        {
-            print("Salary less than 2000 => \(s)")
-        }
-        catch
-        {
-            print(error)
-        }
+    func updateDriverDetail(driver: Driver)  {
+        //
     }
-    func getDriverById(ddriver:Driver) -> Driver?     {
+    
+    
+    /*func getDriverById(ddriver:Driver) -> Driver?     {
         
-        if let driver = dictDrivers[Int(ddriver.driverId!)] {
+        if let driver = dictDrivers[Int(ddriver.driverId!)!] {
             return driver as Driver
         }
         else {
             return nil
         }
-    }
+    }*/
     
 }
