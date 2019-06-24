@@ -25,13 +25,13 @@ extension String
     
     func isValidName() -> Bool
     {
-        let nameTest = NSPredicate(format: "SELF MATCHES %@", "[^a-zA-Z]")
+        let nameTest = NSPredicate(format: "SELF MATCHES %@", "^[a-zA-Z]*$")
         return nameTest.evaluate(with: self)
     }
     
     func isValidContact() -> Bool
     {
-        let mobileRegEx = "^[1{1}]\\s\\d{3}-\\d{3}-\\d{4}$"
+        let mobileRegEx = "^[0-9]{10}$nj"
         let mobileTest = NSPredicate(format:"SELF MATCHES %@", mobileRegEx)
         return mobileTest.evaluate(with: self)
     }

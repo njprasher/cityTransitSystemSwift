@@ -19,3 +19,7 @@ var r3 = Rider(id: "3", password: "123", firstName: "Hargun", lastName: "", emai
 
 Rider.displayRiders()
 
+r1.getRiderDetails()
+
+r1.Display()
+

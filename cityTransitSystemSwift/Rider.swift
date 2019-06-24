@@ -47,11 +47,12 @@ class Rider: Users
     
     func enterFirstName()
     {
+        print("Rider First Name :")
         let tempFirstName = readLine()!
         var returnVariable = ""
         if tempFirstName.isEmpty == false {
             let isValidFirstName = tempFirstName.isValidName()
-            if isValidFirstName == false{
+            if isValidFirstName == true{
                 returnVariable = tempFirstName
             }else{
                 print("You entered Invalid First Name \(String(describing: tempFirstName))")
@@ -65,62 +66,82 @@ class Rider: Users
         self.firstName = returnVariable
     }
     
+    func enterLastName()
+    {
+        print("Rider Last Name :")
+        let temp = readLine()!
+        var returnVariable = ""
+        if temp.isEmpty == false {
+            let isValid = temp.isValidName()
+            if isValid == true{
+                returnVariable = temp
+            }else{
+                print("You entered Invalid Last Name \(String(describing: temp))")
+                print("Please Enter Last Name Again")
+                enterLastName()
+            }
+        }else{
+            print("You haven't entered the First Name, please enter")
+            enterFirstName()
+        }
+        self.lastName = returnVariable
+    }
+    
+    func enterEmail()
+    {
+        print("Rider Email :")
+        let temp = readLine()!
+        var returnVariable = ""
+        if temp.isEmpty == false {
+            let isValid = temp.isValidEmail()
+            if isValid == true{
+                returnVariable = temp
+            }else{
+                print("You entered Invalid Email Name \(String(describing: temp))")
+                print("Please Enter Email Again")
+                enterEmail()
+            }
+        }else{
+            print("You haven't entered the email, please enter")
+            enterEmail()
+        }
+        self.email = returnVariable
+        
+    }
+    
+    func enterContact()
+    {
+        print("Rider Contact :")
+        let temp = readLine()!
+        var returnVariable = ""
+        if temp.isEmpty == false {
+            let isValid = temp.isValidContact()
+            if isValid == true{
+                returnVariable = temp
+            }else{
+                print("You entered Invalid Contact Number \(String(describing: temp))")
+                print("Please Enter Contact number")
+                enterContact()
+            }
+        }else{
+            print("You haven't entered the Contact Number, please enter")
+            enterContact()
+        }
+        self.contact = returnVariable
+        
+    }
+    
     func getRiderDetails()
     {
-      //  var tempFirstName: String
-        var tempLastName: String
-        var tempEmail: String
-        var tempContact: String
         print("******* Please Enter Your Details *******")
         
         self.enterFirstName()
-//        print("Rider First Name :")
-//
-//        tempFirstName = readLine() ?? "No First Name Given"
-//
-//        if (tempFirstName.isValidName() == false)
-//        {
-//            self.firstName = tempFirstName
-//        }else
-//        {
-//            print("Invalid First Name")
-//        }
         
-        print("Rider Last Name :")
+        self.enterLastName()
         
-        tempLastName = readLine() ?? "No Last Name Given"
+        self.enterEmail()
         
-        if (tempLastName.isValidName() == false)
-        {
-            self.lastName = tempLastName
-        }else
-        {
-            print("Invalid Last Name")
-        }
-
-        print("Rider Email :")
-        
-        tempEmail = readLine() ?? "No Email Given"
-        
-        if (tempEmail.isValidEmail() == false)
-        {
-            self.email = tempEmail
-        }else
-        {
-            print("Invalid Email")
-        }
-        
-        print("Rider Contact :")
-        
-        tempContact = readLine() ?? "No Contact Given"
-        
-        if (tempContact.isValidContact() == false)
-        {
-            self.contact = tempContact
-        }else
-        {
-            print("Invalid Contact")
-        }
+        self.enterContact()
         
         self.addFunds()
     }
@@ -160,6 +181,7 @@ class Rider: Users
             , "\nRider Email :" , self.email ?? "No email given"
             , "\nRider Contact Number :" , self.contact ?? "No contact number given"
             , "\n\n---------Rider's Card Details---------"
-            , "\nCard balance :", "$", self.cardBalance ?? "Card balance not available")
+            , "\nCard balance :", "$", self.cardBalance ?? "Card balance not available"
+        ,"\n")
     }
 }
