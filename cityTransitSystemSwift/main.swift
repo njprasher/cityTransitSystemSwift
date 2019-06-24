@@ -19,7 +19,9 @@ var r3 = Rider()
 
 r1.enterFirstName()
 
+r1.addFunds()
+
 Rider.signUp(rider: r1)
 
-
+Rider.displayRiders()
 

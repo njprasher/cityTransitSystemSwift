@@ -39,7 +39,7 @@ class Rider: Users
         var returnVariable = ""
         if tempFirstName.isEmpty == false {
             let isValidFirstName = tempFirstName.isValidName()
-            if isValidFirstName == true{
+            if isValidFirstName == false{
                 returnVariable = tempFirstName
             }else{
                 print("You entered Invalid First Name \(String(describing: tempFirstName))")
@@ -128,6 +128,14 @@ class Rider: Users
     func updateRiderDetails()
     {
         
+    }
+    
+    func addFunds()
+    {
+        print("******* How Much money You would like to add *******")
+        let tempMoney = Double(readLine()!)
+        //tempMoney = self.card!["1"]! + tempMoney!
+        self.card!["1"] = tempMoney
     }
     
     override func Display()
