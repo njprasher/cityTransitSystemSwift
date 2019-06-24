@@ -97,7 +97,7 @@ class Rider: Users
             if isValid == true{
                 returnVariable = temp
             }else{
-                print("You entered Invalid Email Name \(String(describing: temp))")
+                print("You entered Invalid Email \(String(describing: temp))")
                 print("Please Enter Email Again")
                 enterEmail()
             }
@@ -107,6 +107,27 @@ class Rider: Users
         }
         self.email = returnVariable
         
+    }
+    
+    func enterPassword()
+    {
+        print("Rider Password :")
+        let temp = readLine()!
+        var returnVariable = ""
+        if temp.isEmpty == false {
+            let isValid = temp.isValidPassword()
+            if isValid == true{
+                returnVariable = temp
+            }else{
+                print("You entered Invalid Password \(String(describing: temp))")
+                print("Please Enter Pasword Again")
+                enterPassword()
+            }
+        }else{
+            print("You haven't entered the password, please enter")
+            enterPassword()
+        }
+        self.setPassword(password: returnVariable)
     }
     
     func enterContact()
@@ -140,6 +161,8 @@ class Rider: Users
         self.enterLastName()
         
         self.enterEmail()
+        
+        self.enterPassword()
         
         self.enterContact()
         
