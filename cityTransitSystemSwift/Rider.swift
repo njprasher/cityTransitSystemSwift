@@ -32,6 +32,67 @@ class Rider: Users
         return "\(String(describing: self.firstName)) \(String(describing: self.lastName))"
     }
     
+    func getRiderDetails()
+    {
+        var tempFirstName: String
+        var tempLastName: String
+        var tempEmail: String
+        var tempContact: String
+        print("******* Please Enter Your Details *******")
+        print("Rider First Name :")
+        
+        tempFirstName = readLine() ?? "No First Name Given"
+        
+        if tempFirstName.isValidName()
+        {
+            self.firstName = tempFirstName
+        }else
+        {
+            print("Invalid First Name")
+        }
+        
+        print("Rider Last Name :")
+        
+        tempLastName = readLine() ?? "No Last Name Given"
+        
+        if tempLastName.isValidName()
+        {
+            self.lastName = tempLastName
+        }else
+        {
+            print("Invalid Last Name")
+        }
+        
+        //        print("Rider Birth :")
+        //        self.birth = readLine()
+        
+        print("Rider Email :")
+        
+        tempEmail = readLine() ?? "No Email Given"
+        
+        if tempEmail.isValidEmail()
+        {
+            self.email = tempEmail
+        }else
+        {
+            print("Invalid Email")
+        }
+        
+        print("Rider Contact :")
+        
+        tempContact = readLine() ?? "No Contact Given"
+        
+        if tempContact.isValidContact()
+        {
+            self.contact = tempContact
+        }else
+        {
+            print("Invalid Contact")
+        }
+        
+        card?.updateValue(0.0, forKey: "1")
+    }
+    
     override func Display()
     {
         print("---------Rider Details---------")
