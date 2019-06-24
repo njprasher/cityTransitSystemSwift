@@ -215,6 +215,20 @@ class Rider: Users
         }
     }
     
+    //Closure Implementation
+    static func displayBybalance()
+    {
+        let newRiderDict = riderDict.sorted(by: {rider1, rider2 in
+        return rider1.value.cardBalance! > rider2.value.cardBalance!
+            
+        })
+        
+        for rider in newRiderDict
+        {
+            rider.value.Display()
+        }
+    }
+    
     override func Display()
     {
         print("---------Rider Details---------")
