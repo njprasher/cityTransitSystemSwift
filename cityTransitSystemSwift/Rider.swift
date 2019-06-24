@@ -14,7 +14,7 @@ class Rider: Users
     var lastName: String?
     var email: String?
     var contact: String?
-    var card: Dictionary<String, Double>?
+    var cardBalance: Double?
     
     //Rider Dictionary
     private static var riderDict=[String:Rider]()
@@ -24,8 +24,20 @@ class Rider: Users
         self.lastName = String()
         self.email = String()
         self.contact = String()
-        self.card = Dictionary<String, Double>()
+        self.cardBalance = Double()
         super.init()
+    }
+    
+    init(id: String, password: String, firstName: String, lastName: String, email: String, contact: String, cardBalance: Double)
+    {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        self.contact = contact
+        self.cardBalance = cardBalance
+        super.init(id: id, password: password)
+        
+        Rider.signUp(rider: self)
     }
     
     var fullName: String? // computed variable
@@ -110,12 +122,12 @@ class Rider: Users
             print("Invalid Contact")
         }
         
-        card?.updateValue(0.0, forKey: "1")
+        self.addFunds()
     }
     
     static func signUp(rider: Rider)
     {
-        print("---------Signing in New Rider---------")
+        //print("---------Signing in New Rider---------")
         
         riderDict.updateValue(rider, forKey: rider.id ?? "Rider Not Created")
     }
@@ -137,7 +149,7 @@ class Rider: Users
         print("******* How Much money You would like to add *******")
         let tempMoney = Double(readLine()!)
         //tempMoney = self.card!["1"]! + tempMoney!
-        self.card!["1"] = tempMoney
+        self.cardBalance = tempMoney
     }
     
     override func Display()
@@ -148,7 +160,6 @@ class Rider: Users
             , "\nRider Email :" , self.email ?? "No email given"
             , "\nRider Contact Number :" , self.contact ?? "No contact number given"
             , "\n\n---------Rider's Card Details---------"
-            , "\n\nCard Number :", self.card?.keys ?? "Card number not available"
-            , "\nCard balance :", "$", self.card?.values ?? "Card balance not available")
+            , "\nCard balance :", "$", self.cardBalance ?? "Card balance not available")
     }
 }

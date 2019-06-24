@@ -13,15 +13,9 @@ import Foundation
 //a.Display()
 //
 //
-var r1 = Rider()
-var r2 = Rider()
-var r3 = Rider()
-
-r1.getRiderDetails()
-
-r1.addFunds()
-
-Rider.signUp(rider: r1)
+var r1 = Rider(id: "1", password: "123", firstName: "Neeraj", lastName: "Prasher", email: "nj@gmail.com", contact: "+12892330609", cardBalance: 88.0)
+var r2 = Rider(id: "2", password: "123", firstName: "Gurwinder", lastName: "Singh", email: "gurwinder@mail.com", contact: "+12345432768", cardBalance: 96.8)
+var r3 = Rider(id: "3", password: "123", firstName: "Hargun", lastName: "", email: "", contact: "hargun@mail.com", cardBalance: 90.9)
 
 Rider.displayRiders()
 
