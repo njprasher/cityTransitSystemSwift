@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AB310D122C14E6000C4E6BA /* enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB310D022C14E6000C4E6BA /* enum.swift */; };
 		4CAA0EEF22B846A6004A8209 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA0EEE22B846A6004A8209 /* main.swift */; };
 		4CAA0F0F22B94C48004A8209 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA0F0E22B94C48004A8209 /* Users.swift */; };
 		4CAA0F1122B94D26004A8209 /* Rider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA0F1022B94D26004A8209 /* Rider.swift */; };
 		4CAA0F1422B94EE8004A8209 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA0F1322B94EE8004A8209 /* Display.swift */; };
 		4CAA0F2F22B9BF65004A8209 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA0F2E22B9BF65004A8209 /* Admin.swift */; };
 		4CAA0F3122B9BF6E004A8209 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA0F3022B9BF6E004A8209 /* Driver.swift */; };
-		4CFE227E22BDB4DB00C0A03A /* Extension_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE227D22BDB4DB00C0A03A /* Extension_String.swift */; };
-		4CFE228022BDB5EA00C0A03A /* Extension_Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE227F22BDB5EA00C0A03A /* Extension_Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +29,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0AB310D022C14E6000C4E6BA /* enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enum.swift; sourceTree = "<group>"; };
 		4CAA0EEB22B846A6004A8209 /* cityTransitSystemSwift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cityTransitSystemSwift; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CAA0EEE22B846A6004A8209 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4CAA0F0E22B94C48004A8209 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -37,8 +37,6 @@
 		4CAA0F1322B94EE8004A8209 /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
 		4CAA0F2E22B9BF65004A8209 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 		4CAA0F3022B9BF6E004A8209 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
-		4CFE227D22BDB4DB00C0A03A /* Extension_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_String.swift; sourceTree = "<group>"; };
-		4CFE227F22BDB5EA00C0A03A /* Extension_Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +76,7 @@
 				4CAA0F2E22B9BF65004A8209 /* Admin.swift */,
 				4CAA0F3022B9BF6E004A8209 /* Driver.swift */,
 				4CAA0F1022B94D26004A8209 /* Rider.swift */,
+				0AB310D022C14E6000C4E6BA /* enum.swift */,
 			);
 			path = cityTransitSystemSwift;
 			sourceTree = "<group>";
@@ -93,8 +92,6 @@
 		9BF9B21522BD87ED00A49B19 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4CFE227F22BDB5EA00C0A03A /* Extension_Date.swift */,
-				4CFE227D22BDB4DB00C0A03A /* Extension_String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -156,11 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CFE228022BDB5EA00C0A03A /* Extension_Date.swift in Sources */,
 				4CAA0F0F22B94C48004A8209 /* Users.swift in Sources */,
 				4CAA0EEF22B846A6004A8209 /* main.swift in Sources */,
+				0AB310D122C14E6000C4E6BA /* enum.swift in Sources */,
 				4CAA0F1422B94EE8004A8209 /* Display.swift in Sources */,
-				4CFE227E22BDB4DB00C0A03A /* Extension_String.swift in Sources */,
 				4CAA0F3122B9BF6E004A8209 /* Driver.swift in Sources */,
 				4CAA0F2F22B9BF65004A8209 /* Admin.swift in Sources */,
 				4CAA0F1122B94D26004A8209 /* Rider.swift in Sources */,
