@@ -16,6 +16,7 @@ class Rider: Users
     var contact: String?
     var card: Dictionary<String, Double>?
     
+    //Rider Dictionary
     private static var riderDict=[String:Rider]()
     
     override init() {
@@ -27,9 +28,9 @@ class Rider: Users
         super.init()
     }
     
-    var fullName: String // computed variable
+    var fullName: String? // computed variable
     {
-        return "\(String(describing: self.firstName)) \(String(describing: self.lastName))"
+        return "\(String(describing: self.firstName!)) \(String(describing: self.lastName!))"
     }
     
     func getRiderDetails()
@@ -43,7 +44,7 @@ class Rider: Users
         
         tempFirstName = readLine() ?? "No First Name Given"
         
-        if tempFirstName.isValidName()
+        if (tempFirstName.isValidName() == false)
         {
             self.firstName = tempFirstName
         }else
@@ -55,22 +56,19 @@ class Rider: Users
         
         tempLastName = readLine() ?? "No Last Name Given"
         
-        if tempLastName.isValidName()
+        if (tempLastName.isValidName() == false)
         {
             self.lastName = tempLastName
         }else
         {
             print("Invalid Last Name")
         }
-        
-        //        print("Rider Birth :")
-        //        self.birth = readLine()
-        
+
         print("Rider Email :")
         
         tempEmail = readLine() ?? "No Email Given"
         
-        if tempEmail.isValidEmail()
+        if (tempEmail.isValidEmail() == false)
         {
             self.email = tempEmail
         }else
@@ -82,7 +80,7 @@ class Rider: Users
         
         tempContact = readLine() ?? "No Contact Given"
         
-        if tempContact.isValidContact()
+        if (tempContact.isValidContact() == false)
         {
             self.contact = tempContact
         }else
@@ -103,11 +101,23 @@ class Rider: Users
         riderDict.updateValue(rider, forKey: rider.id ?? "Rider Not Created")
     }
     
+    static func displayRiders()
+    {
+        for rider in riderDict{
+            rider.value.Display()
+        }
+    }
+    
+    func updateRiderDetails()
+    {
+        
+    }
+    
     override func Display()
     {
         print("---------Rider Details---------")
         super.Display()
-        print("\nRider Name :" , self.fullName
+        print("\nRider Name :" , self.fullName ?? "No Full Name Given"
             , "\nRider Email :" , self.email ?? "No email given"
             , "\nRider Contact Number :" , self.contact ?? "No contact number given"
             , "\n\n---------Rider's Card Details---------"
