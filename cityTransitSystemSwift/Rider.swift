@@ -93,6 +93,16 @@ class Rider: Users
         card?.updateValue(0.0, forKey: "1")
     }
     
+    static func signUp(rider: Rider)
+    {
+        print("---------Signing in New Rider---------")
+        
+        let rider = Rider()
+        rider.getRiderDetails()
+        
+        riderDict.updateValue(rider, forKey: rider.id ?? "Rider Not Created")
+    }
+    
     override func Display()
     {
         print("---------Rider Details---------")
