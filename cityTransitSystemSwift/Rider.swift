@@ -162,7 +162,8 @@ class Rider: Users
     
     func updateRiderDetails()
     {
-        
+        print("Enter New Details")
+        self.getRiderDetails()
     }
     
     func addFunds()
@@ -171,6 +172,24 @@ class Rider: Users
         let tempMoney = Double(readLine()!)
         //tempMoney = self.card!["1"]! + tempMoney!
         self.cardBalance = tempMoney
+    }
+    
+    static func login()
+    {
+        print("Enter Your Rider Id")
+        let tempId = readLine()
+        
+        print("Enter Your Password")
+        let tempPass = readLine()
+        
+        for i in Rider.riderDict{
+            if i.key == tempId && i.value.password == tempPass
+            {
+                print("Logged in")
+            }else{
+                print("Invalid credentials")
+            }
+        }
     }
     
     override func Display()

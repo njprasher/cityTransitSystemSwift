@@ -31,7 +31,7 @@ extension String
     
     func isValidContact() -> Bool
     {
-        let mobileRegEx = "^[0-9]{10}$nj"
+        let mobileRegEx = "^[0-9]{10}$"
         let mobileTest = NSPredicate(format:"SELF MATCHES %@", mobileRegEx)
         return mobileTest.evaluate(with: self)
     }
