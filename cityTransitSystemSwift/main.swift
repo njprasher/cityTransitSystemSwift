@@ -17,7 +17,7 @@ var r1 = Rider()
 var r2 = Rider()
 var r3 = Rider()
 
-r1.enterFirstName()
+r1.getRiderDetails()
 
 r1.addFunds()
 

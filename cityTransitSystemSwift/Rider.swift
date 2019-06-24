@@ -55,28 +55,30 @@ class Rider: Users
     
     func getRiderDetails()
     {
-        var tempFirstName: String
+      //  var tempFirstName: String
         var tempLastName: String
         var tempEmail: String
         var tempContact: String
         print("******* Please Enter Your Details *******")
-        print("Rider First Name :")
         
-        tempFirstName = readLine() ?? "No First Name Given"
-        
-        if (tempFirstName.isValidName() == true)
-        {
-            self.firstName = tempFirstName
-        }else
-        {
-            print("Invalid First Name")
-        }
+        self.enterFirstName()
+//        print("Rider First Name :")
+//
+//        tempFirstName = readLine() ?? "No First Name Given"
+//
+//        if (tempFirstName.isValidName() == false)
+//        {
+//            self.firstName = tempFirstName
+//        }else
+//        {
+//            print("Invalid First Name")
+//        }
         
         print("Rider Last Name :")
         
         tempLastName = readLine() ?? "No Last Name Given"
         
-        if (tempLastName.isValidName() == true)
+        if (tempLastName.isValidName() == false)
         {
             self.lastName = tempLastName
         }else
@@ -88,7 +90,7 @@ class Rider: Users
         
         tempEmail = readLine() ?? "No Email Given"
         
-        if (tempEmail.isValidEmail() == true)
+        if (tempEmail.isValidEmail() == false)
         {
             self.email = tempEmail
         }else
@@ -100,7 +102,7 @@ class Rider: Users
         
         tempContact = readLine() ?? "No Contact Given"
         
-        if (tempContact.isValidContact() == true)
+        if (tempContact.isValidContact() == false)
         {
             self.contact = tempContact
         }else
