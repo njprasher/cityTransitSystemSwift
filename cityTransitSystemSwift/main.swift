@@ -7,9 +7,19 @@
 //
 
 import Foundation
-var a = Admin()
-a.adminName = "Hargun"
-a.adminEmail = "hargun27@gmail.com"
-a.Display()
+//var a = Admin()
+//a.adminName = "Hargun"
+//a.adminEmail = "hargun27@gmail.com"
+//a.Display()
+//
+//
+var r1 = Rider()
+var r2 = Rider()
+var r3 = Rider()
+
+r1.enterFirstName()
+
+Rider.signUp(rider: r1)
+
 
 

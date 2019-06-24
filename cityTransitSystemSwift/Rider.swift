@@ -33,6 +33,26 @@ class Rider: Users
         return "\(String(describing: self.firstName!)) \(String(describing: self.lastName!))"
     }
     
+    func enterFirstName()
+    {
+        let tempFirstName = readLine()!
+        var returnVariable = ""
+        if tempFirstName.isEmpty == false {
+            let isValidFirstName = tempFirstName.isValidName()
+            if isValidFirstName == true{
+                returnVariable = tempFirstName
+            }else{
+                print("You entered Invalid First Name \(String(describing: tempFirstName))")
+                print("Please Enter First Name Again")
+                enterFirstName()
+            }
+        }else{
+            print("You haven't entered the First Name, please enter")
+            enterFirstName()
+        }
+        self.firstName = returnVariable
+    }
+    
     func getRiderDetails()
     {
         var tempFirstName: String
@@ -44,7 +64,7 @@ class Rider: Users
         
         tempFirstName = readLine() ?? "No First Name Given"
         
-        if (tempFirstName.isValidName() == false)
+        if (tempFirstName.isValidName() == true)
         {
             self.firstName = tempFirstName
         }else
@@ -56,7 +76,7 @@ class Rider: Users
         
         tempLastName = readLine() ?? "No Last Name Given"
         
-        if (tempLastName.isValidName() == false)
+        if (tempLastName.isValidName() == true)
         {
             self.lastName = tempLastName
         }else
@@ -68,7 +88,7 @@ class Rider: Users
         
         tempEmail = readLine() ?? "No Email Given"
         
-        if (tempEmail.isValidEmail() == false)
+        if (tempEmail.isValidEmail() == true)
         {
             self.email = tempEmail
         }else
@@ -80,7 +100,7 @@ class Rider: Users
         
         tempContact = readLine() ?? "No Contact Given"
         
-        if (tempContact.isValidContact() == false)
+        if (tempContact.isValidContact() == true)
         {
             self.contact = tempContact
         }else
@@ -94,9 +114,6 @@ class Rider: Users
     static func signUp(rider: Rider)
     {
         print("---------Signing in New Rider---------")
-        
-        let rider = Rider()
-        rider.getRiderDetails()
         
         riderDict.updateValue(rider, forKey: rider.id ?? "Rider Not Created")
     }
