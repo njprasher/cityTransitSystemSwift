@@ -84,7 +84,7 @@ class Rider: Users
             }
         }else{
             print("You haven't entered the First Name, please enter")
-            enterFirstName()
+            enterLastName()
         }
         self.lastName = returnVariable
     }
