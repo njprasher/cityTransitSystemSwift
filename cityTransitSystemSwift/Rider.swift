@@ -54,6 +54,7 @@ class Rider: Users
             let isValidFirstName = tempFirstName.isValidName()
             if isValidFirstName == true{
                 returnVariable = tempFirstName
+                self.firstName = returnVariable
             }else{
                 print("You entered Invalid First Name \(String(describing: tempFirstName))")
                 print("Please Enter First Name Again")
@@ -75,6 +76,7 @@ class Rider: Users
             let isValid = temp.isValidName()
             if isValid == true{
                 returnVariable = temp
+                self.lastName = returnVariable
             }else{
                 print("You entered Invalid Last Name \(String(describing: temp))")
                 print("Please Enter Last Name Again")
@@ -96,6 +98,7 @@ class Rider: Users
             let isValid = temp.isValidEmail()
             if isValid == true{
                 returnVariable = temp
+                self.email = returnVariable
             }else{
                 print("You entered Invalid Email \(String(describing: temp))")
                 print("Please Enter Email Again")
@@ -111,13 +114,14 @@ class Rider: Users
     
     func enterPassword()
     {
-        print("Rider Password :")
+        print("Rider Password( should have Upper case, lower case, special character and a number) :")
         let temp = readLine()!
         var returnVariable = ""
         if temp.isEmpty == false {
             let isValid = temp.isValidPassword()
             if isValid == true{
                 returnVariable = temp
+                self.setPassword(password: returnVariable)
             }else{
                 print("You entered Invalid Password \(String(describing: temp))")
                 print("Please Enter Pasword Again")
@@ -139,6 +143,7 @@ class Rider: Users
             let isValid = temp.isValidContact()
             if isValid == true{
                 returnVariable = temp
+                self.contact = returnVariable
             }else{
                 print("You entered Invalid Contact Number \(String(describing: temp))")
                 print("Please Enter Contact number")
