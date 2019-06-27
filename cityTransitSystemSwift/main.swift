@@ -8,21 +8,48 @@
 
 import Foundation
 
+
+/*
+print("Enter Your Credentials")
+print("Username")
+let username = "adminHargun"
+let password = "hargun123"
+let isValidEmployee: Int = authenticateEmployee(username: username!, password: password!)
+if isValidEmployee == 1{
+    print("Authetication Successful")
+
+    func authenticateEmployee(username: String,password: String) -> Int {
+        var flag : Int = 0
+        if id.username == username && id.password == password {
+                flag = 1
+            
+        }
+        return flag
+    }
+*/
 // Create Admin Object
+var user = Users(id: "1",password: "12233")
 var adminData = Admin()
+var newDriver1 = Driver(id: "2", password: "1829389", driverFirstName: "Gurwinder", driverLastName: "singh", driverEmail: "abc@c.com", driverPhone: "6475259586", driverSalary: 1000.89, driverBirth: Date(), driverAddress: "Lambton")
 
-// Enter object details
-adminData.adminName = "Hargun"
-adminData.adminEmail = "hargun27@gmail.com"
-adminData.id = "1"
-adminData.setPassword(password: "123")
-adminData.contact = "9876543216"
+var newDriver2 = Driver(id: "3", password: "182938uu9", driverFirstName: "Hargun", driverLastName: "Kaur", driverEmail: "abc88@c.com", driverPhone: "649586", driverSalary: 100.89, driverBirth: Date(), driverAddress: "Lambton")
 
-
+//Admin.loginAdmin()
+if Admin.loginAdmin() == true{
+adminData.addDriver(driver: newDriver1)
+adminData.addDriver(driver: newDriver2)
+//hDriver.login()
+adminData.removeDriver(driver: newDriver1)
+adminData.Display()
+//driver.Display()
 // Cretae driver details
-var d1:Driver = Driver.init(driverId:"2", driverName: "Guri", driverEmail: "guri12@gmail.com", driverPhone: 67862344444, driverSalary: 5677.00, driverBirth:Date(), driverAddress: "23,elgin dr")
-var d2:Driver = Driver.init(driverId:"3", driverName: "Hargun", driverEmail: "hargun23@gmail.com1", driverPhone: 6781112226, driverSalary: 5677.00, driverBirth:Date(), driverAddress: "12 elgin dr")
-
+    
+    
+}
+else
+{
+    print("Enter Correct userName and Password")
+}
 
 
 

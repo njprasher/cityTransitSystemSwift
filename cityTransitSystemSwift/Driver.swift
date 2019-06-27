@@ -4,9 +4,199 @@
 //
 //  Created by Neeraj Prasher on 2019-06-18.
 //  Copyright © 2019 lambton. All rights reserved.
+import Foundation
+class Driver: Users{
+    
+    
+    
+    // declaring variables
+    private var driverNameFirstName : String?
+    var getDriverNameFirstName: String{
+        return self.driverNameFirstName!
+    }
+    private var driverNameLastName : String?
+    var getDriverNameLastName: String{
+        return self.driverNameLastName!
+    }
+    private var driverEmail: String?
+    var getDriverEmail: String{
+        return self.driverEmail!
+    }
+    private var driverPhone: String?
+    var getDriverPhone: String{
+        return self.driverPhone!
+    }
+    private var driverSalary: Double?
+    var getDriverSalary: Double{
+        return self.driverSalary!
+    }
+    private var driverBirth = Date()
+    var getDriverBirth: Date{
+        return self.driverBirth
+    }
+    private var driverAddress: String?
+    var getDriverAddress: String{
+        return self.driverAddress!
+    }
+    
+    static var driverDict=[String:Driver]()
+    
+    override init()
+    {
+        self.driverNameFirstName = String()
+        self.driverNameLastName = String()
+        self.driverEmail = String()
+        self.driverPhone = String()
+        self.driverSalary = Double()
+        self.driverBirth = Date()
+        self.driverAddress = String()
+        super.init()
+    }
+    
+    
+    // INITIALSE THE VARIABLES
+    init(id: String,password: String,driverFirstName: String,driverLastName: String, driverEmail: String,driverPhone: String,driverSalary: Double,driverBirth: Date,driverAddress: String )
+    {
+        self.driverNameFirstName = driverFirstName
+        self.driverNameLastName = driverLastName
+        self.driverEmail = driverEmail
+        self.driverPhone = driverPhone
+        self.driverSalary = driverSalary
+        self.driverBirth = driverBirth
+        self.driverAddress = driverAddress
+        super.init(id: id, password: password)
+        
+registerNewDriver(driver: self)
+    }
+    
+    var fullDriverName: String? // computed variable
+    {
+        return "\(String(describing: self.driverNameFirstName!)) \(String(describing: self.driverNameLastName!))"
+    }
+    
+    // Set Driver Data
+    func setDriverNameFirstName(dFirstName: String){
+        self.driverNameFirstName = dFirstName
+    }
+    
+    func setDriverNameLastName(dLastName: String){
+        self.driverNameLastName = dLastName
+    }
+    
+    func setDriverEmail(dEmail: String){
+        
+        self.driverEmail = dEmail
+    }
+    
+    func setDriverPhone(dPhone: String){
+        self.driverPhone = dPhone
+    }
+    
+    func setDriverSalary(dSalary: Double){
+        self.driverSalary = dSalary
+    }
+    
+    func setDriverBirth(dBirth: Date){
+        self.driverBirth = dBirth
+    }
+    
+    func setDriverAddress(dAddress: String){
+        self.driverAddress = dAddress
+    }
+    
+    //Set Driver Data
+    func setDriverData(driver: Driver)  {
+        print("******* Please Provide Details of Driver *******")
+        setDriverNameFirstName(dFirstName: driver.driverNameFirstName ?? "Data can't be empty")
+        setDriverNameLastName(dLastName: driver.driverNameLastName ?? "Data can't be empty")
+        setDriverPhone(dPhone: driver.driverPhone ?? "Enter Phone Number !!!")
+        setDriverEmail(dEmail: driver.driverEmail ?? "Enter Email !!!")
+        setDriverBirth(dBirth: driver.driverBirth)
+        setDriverAddress(dAddress: driver.driverAddress ?? "Enter Address")
+        setDriverSalary(dSalary: driver.driverSalary!)
+    }
+    
+    static func displayDrivers()
+    {
+        for driver in driverDict{
+            driver.value.Display()
+        }
+    }
+    
+    static func registerNewDriver(driver: Driver)
+    {
+        
+        driverDict.updateValue(driver, forKey: driver.id ?? "Driver Not Created")
+    }
+    
+    static func login()
+    {
+        print("Enter Your Driver Id")
+        let tempId = readLine()
+        
+        print("Enter Your Password")
+        let tempPass = readLine()
+        
+        for i in Driver.driverDict{
+            if i.key == tempId && i.value.password == tempPass
+            {
+                print("Logged in")
+            }
+            else{
+                print("Invalid credentials")
+                
+            }
+        }
+    }
+    
+    override func Display() {
+        print("---------Driver Details---------")
+        super.Display()
+        print("Full Name : \(String(describing: self.fullDriverName!))")
+        let isValidEmail = driverEmail!.isValidEmail()
+        if isValidEmail == true
+        {
+            print("Driver Email : \(String(describing: self.driverEmail!))")
+        }
+        else
+        {
+            print("Email ID : Invalid Email ! Try Again")
+        }
+        let isValidContactNumber = driverPhone?.isValidContact()
+        
+        if isValidContactNumber == true
+        {
+            print("Driver Contact : \(String(describing: self.driverPhone!))")
+        }
+        else
+        {
+            print("Contact Number : Invalid Phone Number ! Try Again")
+        }
+        print("Driver Salary is : \(String(self.driverSalary!))")
+        print("Date of Birth: \(String(describing: self.driverBirth))")
+        print("Driver Address : \(String(describing: self.driverAddress!))")
+    }
+    
+    
+    
+}
 //
 
-import Foundation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import Foundation
 
 
 class Driver{
@@ -15,6 +205,8 @@ class Driver{
     
     var driverId: String?
     
+    var dictDrivers=[String:Driver]()
+
         private var driverName : String?
         var getDriverName: String{
             return self.driverName!
@@ -28,7 +220,7 @@ class Driver{
             return self.driverPhone!
         }
         private var driverSalary: Double?
-        var getDriverSalary: Double{
+        var getDriverSalary: Double{            
             return self.driverSalary!
         }
         private var driverBirth = Date()
@@ -39,7 +231,8 @@ class Driver{
         var getDriverAddress: String{
             return self.driverAddress!
         }
-        
+    
+
         
          init()
         {
@@ -176,4 +369,4 @@ class Driver{
     
         
         
-}
+}*/
